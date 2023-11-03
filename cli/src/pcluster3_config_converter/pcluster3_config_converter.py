@@ -320,6 +320,7 @@ class Pcluster3ConfigConverter(object):
                 ("data_compression_type", "DataCompressionType"),
                 ("export_path", "ExportPath"),
                 ("import_path", "ImportPath"),
+                ("fsx_security_group", "SecurityGroupId"),
                 ("weekly_maintenance_start_time", "WeeklyMaintenanceStartTime"),
                 (
                     "automatic_backup_retention_days",
