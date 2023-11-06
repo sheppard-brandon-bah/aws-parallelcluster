@@ -539,6 +539,8 @@ class SharedFsxLustre(BaseSharedFsx):
                 FsxAutoImportValidator, auto_import_policy=self.auto_import_policy, import_path=self.import_path
             )
         self._register_validator(DeletionPolicyValidator, deletion_policy=self.deletion_policy, name=self.name)
+        if self.fsx_security_groups:
+            self._register_validator(SecurityGroupsValidator, security_group_ids=self.fsx_security_groups)
 
     @property
     def existing_mount_name(self):

@@ -370,7 +370,7 @@ class FsxLustreSettingsSchema(BaseSchema):
     export_path = fields.Str(metadata={"update_policy": UpdatePolicy.UNSUPPORTED})
     import_path = fields.Str(metadata={"update_policy": UpdatePolicy.UNSUPPORTED})
     fsx_security_groups = fields.List(
-        fields.String(),
+        fields.Str(validate=get_field_validator("security_group_id")),
         metadata={"update_policy": UpdatePolicy.UNSUPPORTED},
     )
     weekly_maintenance_start_time = fields.Str(

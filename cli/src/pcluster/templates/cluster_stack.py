@@ -930,8 +930,8 @@ class ClusterCdkStack:
                 else:
                     drive_cache_type = "NONE"
             if shared_fsx.fsx_security_groups == None:
-                file_system_security_groups_refs = [self._add_storage_security_group(id, shared_fsx)]
-                file_system_security_groups = [sg.ref for sg in file_system_security_groups_refs]
+                managed_file_system_security_groups = [self._add_storage_security_group(id, shared_fsx)]
+                file_system_security_groups = [sg.ref for sg in managed_file_system_security_groups]
             else:
                 file_system_security_groups = shared_fsx.fsx_security_groups
             fsx_resource = fsx.CfnFileSystem(
